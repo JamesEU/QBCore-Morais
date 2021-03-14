@@ -22,7 +22,7 @@ AddEventHandler('qb-log:server:CreateLog', function(name, title, color, message,
         if tag then
             PerformHttpRequest(webHook, function(err, text, headers) end, 'POST', json.encode({ username = "Criminal Logs", content = "@everyone"}), { ['Content-Type'] = 'application/json' })
         end
-end
+    end
 end)
 
 RegisterServerEvent('qb-log:server:sendLog')
