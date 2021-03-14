@@ -329,7 +329,10 @@ end)
 
 RegisterServerEvent('qb-admin:server:OpenSkinMenu')
 AddEventHandler('qb-admin:server:OpenSkinMenu', function(targetId)
-    TriggerClientEvent("qb-clothing:client:openMenu", targetId)
+    local src = source
+    if QBCore.Functions.HasPermission(src, permissions["noclip"]) then
+        TriggerClientEvent("qb-clothing:client:openMenu", targetId)
+    end
 end)
 
 RegisterServerEvent('qb-admin:server:SendReport')
